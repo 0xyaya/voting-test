@@ -342,7 +342,7 @@ describe('Voting', () => {
             await expect(workflowStatus).to.be.equal(0);
         });
 
-        it('Second State should be ProposalsRegistrationStarted', async () => {
+        it('Second State should be ProposalsRegistrationStarted and emit a WorkflowStatusChange', async () => {
             const { voting, owner, accountOne } = await loadFixture(
                 deployVoterFixture
             );
@@ -356,7 +356,7 @@ describe('Voting', () => {
             await expect(workflowStatus).to.be.equal(1);
         });
 
-        it('Third State should be ProposalsRegistrationEnded', async () => {
+        it('Third State should be ProposalsRegistrationEnded and emit a WorkflowStatusChange', async () => {
             const { voting, owner, accountOne } = await loadFixture(
                 deployVoterFixture
             );
@@ -371,7 +371,7 @@ describe('Voting', () => {
             await expect(workflowStatus).to.be.equal(2);
         });
 
-        it('Fourth State should be StartVotingSession', async () => {
+        it('Fourth State should be StartVotingSession and emit a WorkflowStatusChange', async () => {
             const { voting, owner, accountOne } = await loadFixture(
                 deployVoterFixture
             );
